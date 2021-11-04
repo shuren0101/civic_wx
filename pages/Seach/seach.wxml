@@ -1,0 +1,12 @@
+<!--pages/Seach/seach.wxml-->
+<view>暂无搜索页面的接口(搜索功能无法使用)</view>
+<!-- 搜索框 -->
+<view class='page_row' bindtap="suo">
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}" />
+    </view>
+  </view>
+  <view class='sousuo'>搜索</view>
+</view>

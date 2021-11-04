@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view id="nav">
+  <navigator url="#" bindtap="getNav">
+    <text>音乐推荐</text>
+  </navigator>
+  <navigator url="../List/musicList/musicList?type=1" bindtap="getNavMusicList1">
+    <text>歌手分类</text>
+  </navigator>
+  <navigator url="../List/musicList/musicList?type=2" bindtap="getNavMusicList2">
+    <text>音乐排行</text>
+  </navigator>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/List/singerList/singerList.wxml-->
+<!-- 导航栏 -->
+<!-- <view id="nav">
+  <text>歌手列表</text>
+</view> -->
+
+<view class="musiclistbox">
+  <navigator url="../sings/sings?type=1&singername={{item.singername}}" class="musicitem" wx:for="{{list}}" wx:key="index">
+    <image src="{{item.imgurl}}"></image>
+    <view class="musicRight">
+      <view>{{item.singername}}</view>
+    </view>
+  </navigator>
+</view>

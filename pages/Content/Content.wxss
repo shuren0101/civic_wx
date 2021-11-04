@@ -1,0 +1,27 @@
+/* pages/Content/Content.wxss */
+.myaudio {
+  width: 250rpx;
+  height: 250rpx;
+  left: 250rpx;
+  top: 12rpx;
+  position: relative;
+}
+
+.myaudio_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.myaudio_startimg {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 75rpx;
+  top: 75rpx;
+}
+
+.slider {
+  width: 500rpx;
+  margin-left: 125rpx;
+}

@@ -1,0 +1,11 @@
+<!--pages/musicList/musicList.wxml-->
+<!-- 导航栏 -->
+<!-- <include src="../../common/nav.wxml" /> -->
+<view class="musiclistbox">
+  <navigator bindtap="getNavType" url="#" class="musicitem" wx:for="{{list}}" wx:key="index" data-classid="{{item.classid}}" data-rankid="{{item.rankid}}">
+    <image src="{{item.imgurl}}"></image>
+    <view class="musicRight">
+      <view>{{item.classname}}</view>
+    </view>
+  </navigator>
+</view>

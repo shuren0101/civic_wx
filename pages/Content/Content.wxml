@@ -1,0 +1,13 @@
+<!--pages/Content/Content.wxml-->
+<!--当前为停止状态  -->
+<view class="myaudio" wx:if="{{isplay==false}}" bindtap='play'>
+  <image class="myaudio_img" src='{{imgUrl}}' />
+  <image src="../../images/play.png" class="myaudio_startimg"></image>
+</view>
+<!--当前为播放状态  -->
+<view class="myaudio" wx:if="{{isplay==true}}" bindtap='stop'>
+  <image class="myaudio_img" src='{{imgUrl}}' />
+  <image src="../../images/pause.png" class="myaudio_startimg"></image>
+</view>
+<slider class="slider"></slider>
+<view wx:if="{{message != ''}}">{{message+"，无法播放"}}</view>

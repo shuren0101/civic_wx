@@ -1,0 +1,9 @@
+<!--pages/List/Top/Top.wxml-->
+<view>
+  <view class="TopTitle">{{data}}</view>
+  <view class="musicContent">
+    <navigator url="#" class="musicitem" wx:for="{{list}}" wx:key="index" wx:for-hash="hash" bindtap="getMusicContent"  data-hash="{{item.hash}}">
+      <view class="songname_original">{{item.filename}}</view>
+    </navigator>
+  </view>
+</view>

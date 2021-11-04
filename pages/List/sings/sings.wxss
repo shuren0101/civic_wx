@@ -1,0 +1,33 @@
+/* pages/List/sings/sings.wxss */
+.singername {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.musicContent {
+  width: 100%;
+  margin: 5px auto;
+}
+
+.musicitem{
+  background: #F7F7F7;
+  width: 90%;
+  height: 80px;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.songname_original {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.hotMusic {
+  color: gray;
+  font-size: 16px;
+}
