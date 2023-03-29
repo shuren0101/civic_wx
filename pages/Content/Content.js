@@ -10,20 +10,31 @@ Page({
     isplay: false, // 是否播放
     imgUrl: "",
     message: "",
+    hash: "",
+    options: ""
   },
   onLoad: function (options) {
+    this.setData({
+      options: options
+    });
     this.getMusicContentList(options.hash);
   },
   // 播放
   play: function () {
     myaudio.play();
     console.log(myaudio.duration);
-    this.setData({ isplay: true });
+    this.setData({
+      hash: this.options.hash,
+      isplay: true
+    });
   },
   // 停止
   stop: function () {
     myaudio.pause();
-    this.setData({ isplay: false });
+    this.setData({
+      hash: '',
+      isplay: false
+    });
   },
   getMusicContentList: function (hash) {
     var _this = this;
@@ -39,10 +50,11 @@ Page({
           imgUrl: res.data.imgUrl.replace("/{size}", "")
         })
         if (res.data.url == "") {
-          _this.setData({ message: res.data.error });
+          _this.setData({
+            message: res.data.error
+          });
           console.log("需要付费,无法播放");
-        }
-        else {
+        } else {
           myaudio.src = res.data.url;
           console.log(myaudio.src);
         }

@@ -21,7 +21,9 @@ Page({
     this.getBanner();
     this.getHotMusicList();
   },
+  onShow: function () {
 
+  },
   getHotMusicList: function () {
     var _this = this;
     wx.request({
@@ -33,6 +35,7 @@ Page({
         _this.setData({
           list: res.data.data
         })
+        console.log(res.data.data);
       }
     })
   },

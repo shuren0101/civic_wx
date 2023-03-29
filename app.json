@@ -26,18 +26,6 @@
         "selectedIconPath": "images/online-s.png"
       },
       {
-        "pagePath": "pages/List/singerList/singerList",
-        "text": "列表",
-        "iconPath": "images/playing.png",
-        "selectedIconPath": "images/playing-s.png"
-      },
-      {
-        "pagePath": "pages/Seach/seach",
-        "text": "搜索",
-        "iconPath": "images/online.png",
-        "selectedIconPath": "images/online-s.png"
-      },
-      {
         "pagePath": "pages/List/musicList/musicList",
         "text": "排行",
         "iconPath": "images/playing.png",

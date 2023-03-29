@@ -12,10 +12,9 @@
     </block>
   </swiper>
 </view>
-
 <view class="musicContent">
   <view class="musicTitle">推荐歌单</view>
-  <navigator url="#" wx:for="{{list}}" wx:for-hash="{{item.hash}}" wx:key="index" bindtap="getMusicContent" data-hash="{{item.hash}}">
+  <navigator url="#" wx:for="{{list}}" wx:for-hash="{{item.hash}}" wx:key="{{item.album_id}}" bindtap="getMusicContent" data-hash="{{item.hash}}">
     <view class="hotMusic">
       <text>{{item.filename}}</text>
     </view>
