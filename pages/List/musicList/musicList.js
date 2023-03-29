@@ -30,38 +30,20 @@ Page({
   getHotMusicList: function (type) {
     var url = type == 1 ? url1 : url2;
     var _this = this;
-    app.getMusicListData(url, function (res) {
-      if (type == 1) {
-        var musiclist = res.data.list;
-        for (var i = 0; i < musiclist.length; i++) {
-          musiclist[i].imgurl = musiclist[i].imgurl
-          musiclist[i].classname = musiclist[i].classname
-          musiclist[i].rankid = musiclist[i].classid
-        }
-        _this.setData({
-          list: musiclist
-        })
+    app._getData(url).then(res => {
+      var resList = type == 1 ? res.data.list : res.data.rank.list;
+      for (var i = 0; i < resList.length; i++) {
+        resList[i].imgurl = type == 1 ? resList[i].imgurl : resList[i].banner7url.replace("/{size}", "")
+        resList[i].classname = type == 1 ? resList[i].classname : resList[i].rankname
+        resList[i].rankid = type == 1 ? resList[i].classid : resList[i].rankid
       }
-      else {
-        var ranklist = res.data.rank.list;
-        for (var i = 0; i < ranklist.length; i++) {
-          ranklist[i].imgurl = ranklist[i].banner7url.replace("/{size}", "")
-          ranklist[i].classname = ranklist[i].rankname
-          ranklist[i].rankid = ranklist[i].rankid
-        }
-        _this.setData({
-          list: ranklist
-        })
-      }
-    });
-  },
-
-  getNav: function () {
-    wx.switchTab({
-      url: '../../index/index',
+      _this.setData({
+        list: resList
+      })
     })
-  },
 
+  },
+  
   getNavMusicList1: function () {
     wx.navigateTo({
       url: '../../List/musicList/musicList?type=1',

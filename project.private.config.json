@@ -3,7 +3,8 @@
   "projectname": "civic_wx",
   "setting": {
     "compileHotReLoad": true,
-    "autoAudits": true,
-    "bigPackageSizeSupport": true
+    "autoAudits": false,
+    "bigPackageSizeSupport": true,
+    "useIsolateContext": true
   }
 }

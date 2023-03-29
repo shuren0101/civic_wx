@@ -1,21 +1,29 @@
 //app.js
 App({
-  getMusicListData(url, cb) {
-    wx.request({
-      url: url,
-      header: {
-        'content-type': 'json' // 默认值
-      },
-      success(res) {
-        cb(res)
-      }
+  /**
+   * 获取接口数据
+   */
+  _getData(url) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: url,
+        header: {
+          'content-type': 'json' // 默认值
+        },
+        success: resolve,
+        fail: reject
+      })
     })
   },
+  /**
+   * Switch跳转
+   */
   // getTab(url) {
   //   wx.switchTab({
   //     url: url
   //   })
   // },
+  onLoad: function () {},
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
