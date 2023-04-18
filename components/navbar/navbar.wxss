@@ -1,0 +1,51 @@
+/* components/navbar/navbar.wxss */
+.navbar {
+  width: 100%;
+  /* background: #fff; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.glass {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .7);
+}
+
+.glass::before {
+  backdrop-filter: blur(40rpx);
+}
+
+.statusbar,
+.navbarContainer {
+  width: 100%;
+}
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.navbar view {
+  flex: 1;
+}
+
+.back {
+  height: 100%;
+}
+
+.navbarTitle {
+  width: 100%;
+  height: 100%;
+  flex: 2;
+  font-size: var(--font-size-base);
+}
+
+.capsule {
+  height: 100%;
+}

@@ -1,59 +1,81 @@
 /**index.wxss**/
-/* 导航栏 */
-#nav {
-  width: 100%;
-  height: 135px;
-  background: #4747FF;
-  top: 0;
-  left: 0;
-}
+/* 骨架屏 */
+@import "./index.skeleton.wxss";
 
 /* 轮播图 */
 .swiper {
-  width: 100%;
-  height: 280rpx;
-  position: absolute;
-  top: -10px;
-  /* padding-left: 2%; */
+  height: 200rpx;
 }
-.swiper image {
+
+.swiper .swiperitem {
   width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
 }
-/* dots位置 */
-.wx-swiper-dots.wx-swiper-dots-horizontal {
-  top: 280rpx;
+
+.swiper .swiperitem text {
+  font-size: var(--font-size-lg);
+}
+
+.swiperitem image {
+  width: var(--img-size-lg);
+  height: var(--img-size-lg);
+  border-radius: var(--border-radius-circle);
 }
 
 /* 推荐歌单 */
-.musicContent {
-  width: 98%;
-  margin: 10px auto;
+.content {
+  width: 100%;
+  padding-bottom: var(--spacing-col-lg);
 }
 
-.musicTitle {
-  padding-left: 2.5%;
-  margin-bottom: 10px;
+.musicList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .hotMusic {
-  width: 95%;
-  height: 50px;
-  line-height: 50px;
-  background: #F7F7F7;
+  width: calc((100% - 15rpx) / 3);
+  min-width: calc((100% - 15rpx) / 3);
+  max-width: calc((100% - 15rpx) / 3);
+  height: 300rpx;
+  margin: 0 5rpx 5rpx 0;
   color: #000;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  padding-left: 1%;
-  padding-right: 1%;
-  margin-bottom: 10px;
+  padding: 10rpx;
+  box-sizing: border-box;
 }
 
-.hotMusic text {
-  display: -webkit-box;
-  word-break: break-all;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+.hotMusic image {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 200rpx;
+}
+
+.hotMusic view text {
+  margin-top: 5rpx;
+}
+
+.rankListitem {
+  width: 100%;
+  padding: 0 10rpx 10rpx 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.rankListitem text {
+  line-height: 2;
+}
+
+.rankListitem image {
+  width: calc((100vw - 15rpx) / 3);
+  min-width: calc((100vw - 15rpx) / 3);
+  max-width: calc((100vw - 15rpx) / 3);
+  height: calc((100vw - 15rpx) / 3);
+  margin-right: 30rpx;
 }

@@ -1,0 +1,15 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class="tab-bar">
+  <view wx:for="{{list}}" wx:key="{{item.tabId}}" class="tab-bar-item" data-index="{{index}}" bindtap="toPage">
+    <view class="{{selected === index ? 'checked' : 'unchecked'}}">
+      <view wx:if="{{index === 1}}">
+        <image src="{{imgUrl || '/images/backgroundDefault.jpg'}}" mode="scaleToFill" />
+      </view>
+      <view class="{{selected === index ? item.selectedIconPath : item.iconPath}}" wx:else></view>
+      <view>{{item.text}}</view>
+    </view>
+  </view>
+  <view class="glass"></view>
+</view>
+<!-- 背景占位 -->
+<view class="placeholder-bottom"></view>

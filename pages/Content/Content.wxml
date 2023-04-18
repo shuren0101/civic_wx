@@ -1,7 +1,19 @@
 <!--pages/Content/Content.wxml-->
-<view class="myaudio" bindtap="{{isplay ? 'stop' : 'play'}}">
-  <image class="myaudio_img" src='{{imgUrl}}' />
-  <image src="{{isplay ? '../../images/pause.png' : '../../images/play.png'}}" class="myaudio_startimg"></image>
+<view class="box col" style="background-image:url({{musicInfo.album_img}});">
+  <navbar back>
+    <view slot='title'>
+      {{options.song_name}}
+    </view>
+  </navbar>
+  <view class="glass col">
+    <view class="myaudio" bindtap="{{isplay ? 'stop' : 'play'}}">
+      <image src='{{musicInfo.album_img}}' mode="aspectFill" class="{{isplay ? 'active' : 'paused'}}" />
+      <image src="{{isplay ? '../../images/pause.png' : '../../images/play.png'}}" mode="scaleToFill"></image>
+    </view>
+    <!-- <slider class="slider"></slider> -->
+    <view wx:if="{{message != ''}}">{{message+"，无法播放"}}</view>
+    <view class="musicControl">
+      <icon class="iconfont icon-bofang"></icon>
+    </view>
+  </view>
 </view>
-<slider class="slider"></slider>
-<view wx:if="{{message != ''}}">{{message+"，无法播放"}}</view>

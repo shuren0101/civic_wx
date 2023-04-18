@@ -1,0 +1,18 @@
+<!--components/navbar/navbar.wxml-->
+<view class="navbar" style="height:{{userSystem.navigationBarHeight + userSystem.statusBarHeight}}px;">
+  <view class="col glass">
+    <view class="statusbar" style="height: {{userSystem.statusBarHeight}}px;"></view>
+    <view class="navbarContainer" style="height:{{userSystem.navigationBarHeight}}px;">
+      <view class="back cen_start" style="padding-left: {{userSystem.right}}px;width:{{userSystem.height + userSystem.right * 2}}px;" wx:if="{{back}}" bindtap="toPage">
+        <!-- <image src="" mode="" /> -->
+        {{back}}
+      </view>
+      <view class="navbarTitle center">
+        <slot name='title'></slot>
+      </view>
+      <view class="capsule" style="width: {{userSystem.right + userSystem.width}}px;"></view>
+    </view>
+  </view>
+</view>
+<!-- 背景占位 -->
+<view class="placeholder-top" style="height:{{userSystem.navigationBarHeight + userSystem.statusBarHeight}}px;"></view>

@@ -1,0 +1,10 @@
+<!--components/indexlist.wxml-->
+<view class='musicList'>
+  <navigator url="#" wx:for="{{list}}" wx:for-hash="{{item.hash}}" data-musicdetail="{{item}}" wx:key="{{item.album_id}}" bindtap="getMusicContent" class="hotMusic col">
+    <image src="{{item.album_sizable_cover}}" mode="scaleToFill" />
+    <view class="col">
+      <text class="textEllipsis matter">{{item.song_name}}</text>
+      <text class="textEllipsis detail">{{item.singer_name}}</text>
+    </view>
+  </navigator>
+</view>

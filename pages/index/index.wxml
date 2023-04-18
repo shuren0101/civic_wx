@@ -1,22 +1,51 @@
 <!--index.wxml-->
-<!-- 导航栏 -->
-<!-- <include src="../common/nav.wxml" /> -->
-<view id="nav"></view>
-<!-- 轮播图 -->
-<view class="page-section page-section-spacing swiper">
-  <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" circular="true">
-    <block wx:for="{{imgUrls}}" wx:key="id">
-      <swiper-item>
-        <image mode="aspectFit" src="{{item.imgurl}}"></image>
-      </swiper-item>
-    </block>
-  </swiper>
-</view>
-<view class="musicContent">
-  <view class="musicTitle">推荐歌单</view>
-  <navigator url="#" wx:for="{{list}}" wx:for-hash="{{item.hash}}" wx:key="{{item.album_id}}" bindtap="getMusicContent" data-hash="{{item.hash}}">
-    <view class="hotMusic">
-      <text>{{item.filename}}</text>
+<view class="content">
+  <navbar></navbar>
+  <import src="index.skeleton.wxml" />
+  <template is="skeleton" wx:if="{{loading}}" />
+  <block wx:else>
+    <view class="title">歌手分类</view>
+    <swiper display-multiple-items='4' autoplay="true" interval="2000" duration="500" circular="true" class="swiper">
+      <block wx:for="{{singerList}}" wx:key="{{item.classid}}">
+        <swiper-item class="swiperitem col">
+          <image mode="scaleToFill" src="{{item.imgurl}}"></image>
+          <text class="textEllipsis">{{item.classname}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播图 -->
+    <!-- <view class="swiper">
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="id">
+        <swiper-item>
+          <image mode="scaleToFill" src="{{item.imgurl}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+    <view class="title">新歌首发</view>
+    <indexList list="{{list}}"></indexList>
+    <!-- <view class='musicList'>
+      <navigator url="#" wx:for="{{list}}" wx:for-hash="{{item.hash}}" wx:key="{{item.album_id}}" bindtap="getMusicContent" data-hash="{{item.hash}}" class="hotMusic col">
+        <image src="{{item.album_sizable_cover}}" mode="scaleToFill" />
+        <view class="col">
+          <text class="textEllipsis">{{item.song_name}}</text>
+          <text class="textEllipsis">{{item.singer_name}}</text>
+        </view>
+      </navigator>
+    </view> -->
+    <view class="title">热歌榜</view>
+    <view class="col">
+      <navigator bindtap="getNavType" url="#" class="musicitem" wx:for="{{rankList}}" wx:key="index" data-rankid="{{item.rankid}}" class="rankListitem">
+        <image src="{{item.banner7url}}"></image>
+        <view>
+          <text class="textEllipsis">{{item.rankname}}</text>
+          <view wx:for="{{item.songinfo}}" wx:for-item="item1" wx:key="index">
+            <text class="textEllipsis detail">{{item1.songname}}</text>
+          </view>
+        </view>
+      </navigator>
     </view>
-  </navigator>
+  </block>
+  <tabbar></tabbar>
 </view>

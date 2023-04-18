@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "indexList": "/components/indexlist/indexlist",
+    "navbar": "/components/navbar/navbar",
+    "tabbar": "/components/tabbar/tabbar"
+  }
 }
