@@ -43,7 +43,7 @@ Page({
   },
   getMusicContent: function (e) {
     wx.navigateTo({
-      url: '../../Content/Content?hash=' + e.currentTarget.dataset.hash
+      url: `/pages/Content/Content?musicInfo=${JSON.stringify(e.currentTarget.dataset.musicdetail)}`
     })
   },
   /**

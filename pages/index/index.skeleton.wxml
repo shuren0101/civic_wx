@@ -1,0 +1,133 @@
+<!--
+此文件为开发者工具生成，生成时间: 2023/4/10下午2:21:53
+使用方法：
+在 E:\CJT\Class\civic_wx\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 E:\CJT\Class\civic_wx\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="musicContent">
+      <view class="musicTitle title">
+        <text class="sk-transparent sk-text">新歌首发</text>
+      </view>
+      <view class="musicList">
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">黑月光</text>
+            <text class="textEllipsis sk-transparent sk-text">张碧晨、毛不易</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">背对地球奔跑</text>
+            <text class="textEllipsis sk-transparent sk-text">时代少年团</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">野花做了场玫瑰花的梦</text>
+            <text class="textEllipsis sk-transparent sk-text">半吨兄弟</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">肆意的野风</text>
+            <text class="textEllipsis sk-transparent sk-text">云朵</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">后来</text>
+            <text class="textEllipsis sk-transparent sk-text">半吨兄弟</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-opacity">H</text>
+            <text class="textEllipsis sk-transparent sk-text">严浩翔</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">失落梦境</text>
+            <text class="textEllipsis sk-transparent sk-text">旺仔小乔</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">人生的歌</text>
+            <text class="textEllipsis sk-transparent sk-text">魏佳艺</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">不逾</text>
+            <text class="textEllipsis sk-transparent sk-text">叶炫清、张远</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-opacity">界</text>
+            <text class="textEllipsis sk-transparent sk-text">袁娅维TIA RAY</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">云端相见</text>
+            <text class="textEllipsis sk-transparent sk-text">玥夏</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">Reset ice</text>
+            <text class="textEllipsis sk-transparent sk-text">初音ミク、冰叔Konol</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">人生的道场 (感悟版)</text>
+            <text class="textEllipsis sk-transparent sk-text">米灵</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">寄长月</text>
+            <text class="textEllipsis sk-transparent sk-text">不才</text>
+          </view>
+        </navigator>
+        <navigator class="hotMusic col">
+          <image mode="scaleToFill" class="sk-image"></image>
+          <view class="col">
+            <text class="textEllipsis sk-transparent sk-text">流淌的伊犁河</text>
+            <text class="textEllipsis sk-transparent sk-text">乌兰图雅</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</template>

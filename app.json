@@ -11,29 +11,18 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4747FF",
-    "navigationBarTitleText": "思域音乐",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "tabBar": {
+    "custom": true,
     "borderStyle": "black",
     "backgroundColor": "#F7F7FA",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "images/online.png",
-        "selectedIconPath": "images/online-s.png"
-      },
-      {
-        "pagePath": "pages/List/singerList/singerList",
-        "text": "列表",
-        "iconPath": "images/playing.png",
-        "selectedIconPath": "images/playing-s.png"
-      },
-      {
-        "pagePath": "pages/Seach/seach",
-        "text": "搜索",
         "iconPath": "images/online.png",
         "selectedIconPath": "images/online-s.png"
       },

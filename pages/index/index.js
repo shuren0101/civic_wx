@@ -1,54 +1,63 @@
 //index.js
-//获取应用实例
 const app = getApp()
-// 音乐推荐接口地址
-var url = "http://m.kugou.com/?json=true"
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    userSystem: [],
+    loading: true,
     imgUrls: [],
-    list: []
+    list: [],
+    singerList: [],
+    rankList: []
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getBanner();
-    this.getHotMusicList();
+  onLoad: function () {
+    this.setData({
+      userSystem: app.globalData.userSystem
+    })
+    this._getHotMusicList();
+    this._getSingerList();
+    this._getRankList();
   },
-
-  getHotMusicList: function () {
-    var _this = this;
-    wx.request({
-      url: url,
-      header: {
-        'content-type': 'json' // 默认值
-      },
-      success(res) {
-        _this.setData({
-          list: res.data.data
-        })
-      }
+  onShow: function () {
+    // if (typeof this.getTabBar === 'function' &&
+    //   this.getTabBar()) {
+    //   this.getTabBar().setData({
+    //     //就是页面显示出来后，让相应的tab改变颜色 图标等样式，也就是这一步可能造成的自定义tab会闪屏  
+    //     selected: 3
+    //   })
+    // }
+  },
+  async _getHotMusicList() {
+    let res = await app._getData('http://m.kugou.com/?json=true');
+    let list = res.data.data.filter((item, index) => {
+      item.album_sizable_cover = item.album_sizable_cover.replace('{size}', '240');
+      return index <= 5;
+    })
+    this.setData({
+      imgUrls: res.data.banner,
+      list: list,
     })
   },
-
-  getBanner() {
-    var _this = this;
-    wx.request({
-      url: url,
-      header: {
-        'content-type': 'json' // 默认值
-      },
-      success(res) {
-        _this.setData({
-          imgUrls: res.data.banner,
-        })
-      }
+  async _getSingerList() {
+    let res = await app._getData('http://m.kugou.com/singer/class&json=true');
+    this.setData({
+      singerList: res.data.list
+    })
+  },
+  async _getRankList() {
+    let res = await app._getData('http://m.kugou.com/rank/list&json=true');
+    this.setData({
+      rankList: res.data.rank.list.filter((item, index) => {
+        item.banner7url = item.banner7url.replace('/{size}', '');
+        return index <= 2;
+      }),
+      loading: false
     })
   },
 
@@ -57,53 +66,4 @@ Page({
       url: '../Content/Content?hash=' + e.currentTarget.dataset.hash
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

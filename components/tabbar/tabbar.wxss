@@ -1,0 +1,73 @@
+/* components/tabbar/tabbar.wxss */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  /* background: #fff; */
+  display: flex;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 1000;
+}
+
+.glass {
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, .7);
+}
+
+.glass::before {
+  backdrop-filter: blur(40rpx);
+}
+
+.tab-bar view:not(.glass) {
+  z-index: 11;
+}
+
+.tab-bar view image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10rpx solid rgba(255, 255, 255, .7);
+}
+
+.tab-bar-item {
+  width: 100rpx;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item view {
+  font-size: var(--font-size-sm);
+}
+
+.placeholder-bottom {
+  height: calc(100rpx + env(safe-area-inset-bottom));
+}
+
+.iconfont {
+  font-size: 54rpx !important;
+}
+
+.checked view {
+  color: var(--color-primary);
+  box-sizing: var(--boxshadow-bottom);
+}
+
+.unchecked view {
+  color: var(--color-second);
+  box-sizing: var(--boxshadow-bottom);
+}
